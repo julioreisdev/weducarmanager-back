@@ -1,12 +1,4 @@
-import express from "express";
-import cors from "cors";
-import testRouter from "./routes/testRoutes.js";
-
-const server = express();
-
-server.use(cors(), express.json());
-
-server.use(testRouter);
+import server from "./app.js";
 
 const port = 8007;
 
