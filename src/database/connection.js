@@ -1,10 +1,13 @@
 import mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
-const connection = await mysql.createPool({
-  host: "localhost",
+dotenv.config();
+
+const connection = mysql.createPool({
+  host: process.env.DATABASE_URL,
   user: "root",
-  password: "sua_senha",
-  database: "nome_do_banco",
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
   port: 3306,
 });
 

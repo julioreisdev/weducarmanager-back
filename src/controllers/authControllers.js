@@ -1,3 +1,6 @@
+import { signInService } from "../services/authServices.js";
+
 export async function signInController(req, res) {
-  return res.send({ message: "Login da Weducar!", data: req.body });
+  const response = await signInService(req.body);
+  return res.send(response);
 }
