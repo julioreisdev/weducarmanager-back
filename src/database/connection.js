@@ -11,4 +11,14 @@ const connection = mysql.createPool({
   port: 3306,
 });
 
+connection
+  .getConnection()
+  .then((conn) => {
+    console.log("Banco conectado!");
+    conn.release();
+  })
+  .catch((err) => {
+    console.error("Erro ao conectar ao banco de dados:", err);
+  });
+
 export default connection;
